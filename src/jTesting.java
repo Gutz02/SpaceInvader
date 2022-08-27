@@ -13,7 +13,6 @@ public class jTesting {
     @BeforeEach
     public void jTesting() throws IOException, AWTException {
         rob = new Robot();
-        gameTest = new playBoard();
     }
 
 
