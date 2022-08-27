@@ -54,6 +54,7 @@ public class playBoard extends JFrame implements KeyListener {
         setResizable(false);
         setVisible(true);
         movingBullet();
+        inverShips.run();
     }
 
 
@@ -191,7 +192,7 @@ class enemies extends Thread {
     playBoard currentInstance;
     JLabel ufoShip;
     boolean element = false;
-    List position = (List) Arrays.asList(new int[]{50,100,150,200,250,300,350,400,450,500,550,600});
+    int[] position = new int[]{50,100,150,200,250,300,350,400,450,500,550,600};
 
     public enemies(playBoard playBoard) {
         this.currentInstance = playBoard;
@@ -212,10 +213,10 @@ class enemies extends Thread {
 
             ufoShip = new JLabel(new ImageIcon(ufo));
 
-            while(element){
-                int index = rand.nextInt(12);
 
-            }
+            int index = rand.nextInt(12);
+            currentInstance.addStats(ufoShip,index,50,67,67);
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
