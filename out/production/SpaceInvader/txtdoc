@@ -1,0 +1,19 @@
+for (int i = 0; i < currentInstance.enemiesList.size() ; i++){
+                    for (int j = 0; j < currentInstance.getXyLocation().get("Bullet").size(); j++ ){
+                        if (currentInstance.getXyLocation().get("Enemies").get(i).get(1) == currentInstance.getXyLocation().get("Bullet").get(j).get(1) ){
+
+                            currentInstance.getXyLocation().get("Enemies").remove(i);
+
+                            currentInstance.removeEnemies(i);
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+
+                        }
+                    }
+                }
+
+enemiesList.remove(index);
+remove(enemiesShip);
